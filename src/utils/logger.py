@@ -1,5 +1,5 @@
 import logging
 
-logging.basicConfig(filename='../test_data_dev_per/logs/app.log', filemode='a',
+logging.basicConfig(filename='../exam-ignacio-alvarez/logs/app.log', filemode='w',
                     format='[%(asctime)s] %(name)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S')
 logger = logging.getLogger(__name__)
