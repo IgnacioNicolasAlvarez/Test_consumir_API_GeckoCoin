@@ -1,0 +1,7 @@
+venv
+tmp.json
+__pycache__
+.vscode
+data/*
+Enunciado.txt
+logs/*

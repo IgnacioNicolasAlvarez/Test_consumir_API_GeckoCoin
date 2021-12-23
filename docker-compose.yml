@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:14.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: example
+      POSTGRES_DB: example
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./data/postgres:/var/lib/postgresql/data"
+      
+  app:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - "./Files:/test_data_dev_per/Files"
+    stdin_open: true
+    tty: true
+    
