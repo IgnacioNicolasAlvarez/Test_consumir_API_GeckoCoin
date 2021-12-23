@@ -1,8 +1,8 @@
-venv
 tmp.json
 __pycache__
 .vscode
 data/*
-*.txt
+Enunciado.txt
 Files/*
 logs/*
+venv
