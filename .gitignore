@@ -1,5 +1,8 @@
 tmp.json
 __pycache__
 .vscode
+data/postgres/*
 Enunciado.txt
+Files/*
+logs/*
 venv
