@@ -7,9 +7,10 @@ from src.client.coins import ApiGeckoClient
 
 
 class CoinController:
-    def __init__(self, coin, date) -> None:
+    def __init__(self, coin, date, to_db) -> None:
         self.id_coin = coin
         self.date = date
+        self.to_db = to_db
 
     def get_coin(self) -> dict:
         api_client = ApiGeckoClient()
@@ -19,23 +20,17 @@ class CoinController:
         api_client = ApiGeckoClient()
         return api_client.get_history_coins(self.id_coin, self.date, end_date)
 
-    def persist_coin(self, coin_data: dict, to_db: bool = False) -> None:
+    def persist_coin(self, coin_data: dict) -> None:
         coin = self._convert_to_model(coin_data)
         self._save_as_file(coin, self.date)
-        if to_db:
-            self._save_into_db(coin)
-
-    def persist_coin(self, coin_data: dict, to_db: bool = False) -> None:
-        coin = self._convert_to_model(coin_data)
-        self._save_as_file(coin, self.date)
-        if to_db:
+        if self.to_db:
             self._save_into_db(coin)
                 
-    def persist_coins(self, coins_data: list, to_db: bool = False) -> None:
+    def persist_coins(self, coins_data: list) -> None:
         for coin_data in coins_data:
-            coin = self._convert_to_model(coins_data[1])
-            self._save_as_file(coin, coins_data[0])
-            if to_db:
+            coin = self._convert_to_model(coin_data[1])
+            self._save_as_file(coin, coin_data[0])
+            if self.to_db:
                 self._save_into_db(coin)
 
     def _save_as_file(self, data, date):

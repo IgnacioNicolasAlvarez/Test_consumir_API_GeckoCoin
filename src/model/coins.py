@@ -1,8 +1,8 @@
-from typing import Optional
+from typing import Optional, Text
 from datetime import datetime
 from sqlmodel import Field, SQLModel
 
-
+from sqlalchemy import Column, TEXT
 
 class CoinHistoryBase(SQLModel):
     id_coin: str
@@ -11,7 +11,7 @@ class CoinHistoryBase(SQLModel):
     current_price_usd: float
     market_cap_usd: float
     total_volume_usd: float
-    json_response: str
+    #json_response: str = Field(sa_column=Column(TEXT))
     date_added: datetime = Field(default=datetime.now())
 
 
