@@ -17,8 +17,6 @@ services:
       
   app:
     build: .
-    depends_on:
-      - db
     volumes:
       - "./Files:/test_data_dev_per/Files"
     stdin_open: true

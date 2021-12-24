@@ -21,7 +21,7 @@ def get_coins(
     controller = CoinController(id_coin, start_date)
 
     if end_date:
-        res = controller.get_coin(end_date)
+        res = controller.get_coins(end_date)
     else:
         res = controller.get_coin()
 

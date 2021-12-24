@@ -21,7 +21,7 @@ class ApiGeckoClient:
             logger.error(e)
         return data
 
-    def get_history_coin(self, coin_id, start_date: str, end_date: str) -> list:
+    def get_history_coins(self, coin_id, start_date: str, end_date: str) -> list:
 
         data_list = []
         for date in get_dates_in_interval(start_date, end_date):

@@ -5,3 +5,4 @@ __pycache__
 data/*
 Enunciado.txt
 logs/*
+init_db.sh
