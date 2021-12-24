@@ -1,9 +1,9 @@
+from src.client.coins import ApiGeckoClient
 from src.db.database import DB
 from src.model.coins import CoinHistoryCreate
+from src.utils.config import FILES_PATH
 from src.utils.file import save_dict_to_json_in_folder
 from src.utils.logger import logger
-
-from src.client.coins import ApiGeckoClient
 
 
 class CoinController:
@@ -25,7 +25,7 @@ class CoinController:
         self._save_as_file(coin, self.date)
         if self.to_db:
             self._save_into_db(coin)
-                
+
     def persist_coins(self, coins_data: list) -> None:
         for coin_data in coins_data:
             coin = self._convert_to_model(coin_data[1])
@@ -34,9 +34,7 @@ class CoinController:
                 self._save_into_db(coin)
 
     def _save_as_file(self, data, date):
-        save_dict_to_json_in_folder(
-            "../exam-ignacio-alvarez/Files", data, date, self.id_coin
-        )
+        save_dict_to_json_in_folder(FILES_PATH, data, date, self.id_coin)
 
     def _save_into_db(self, coin_history: CoinHistoryCreate):
         db = DB()

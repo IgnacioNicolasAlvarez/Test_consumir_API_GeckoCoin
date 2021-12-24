@@ -1,4 +1,5 @@
 # Ejercicio: Consumir API GeckoCoin
+
 1 - Definir los id_coins a consumir:
 
 Agregar los coins dentro del archivo *coins.txt* separados por un salto de linea.
@@ -9,13 +10,13 @@ Agregar los coins dentro del archivo *coins.txt* separados por un salto de linea
 > 
 > bash init_db.sh
 
-3 - Ejecutar app que consulta API
+3 - Ejecutar app que consulta API para ejecutar a día cerrado
 
 > chmod a-x init_app.sh
 > 
 > bash init_app.sh
 
-o 
+o ejecutar un intervalo de fechas definido
 
 > docker ps #obtener id del container
 > 

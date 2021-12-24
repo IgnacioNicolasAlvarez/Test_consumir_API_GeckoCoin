@@ -1,8 +1,10 @@
 from sqlmodel import Session, SQLModel, create_engine
+from src.utils.config import DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER
 from src.utils.logger import logger
 from src.model.coins import CoinHistory
+from src.utils.config import *
 
-engine = create_engine("postgresql+psycopg2://example:example@172.25.0.2:5432/example")
+engine = create_engine(F"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_DATABASE}")
 SQLModel.metadata.create_all(engine)
 
     
