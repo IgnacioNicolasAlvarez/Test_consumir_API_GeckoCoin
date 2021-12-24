@@ -17,6 +17,8 @@ services:
       
   app:
     build: .
+    depends_on:
+      - db
     volumes:
       - "./Files:/exam-ignacio-alvarez/Files"
     stdin_open: true

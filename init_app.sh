@@ -8,3 +8,5 @@ while read coin
 do
     python3 main.py "$coin" --start-date $start_date --to-db
 done < coins.txt
+
+echo "END Run: $start_date"

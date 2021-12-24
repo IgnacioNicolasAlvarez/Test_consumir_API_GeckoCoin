@@ -4,17 +4,14 @@
 
 Agregar los coins dentro del archivo *coins.txt* separados por un salto de linea.
 
-2 - Inicializar BD
 
-> chmod a-x init_db.sh
-> 
-> bash init_db.sh
-
-3 - Ejecutar app que consulta API para ejecutar a día cerrado
+2 - Ejecutar app que consulta API para ejecutar a día cerrado
 
 > chmod a-x init_app.sh
 > 
-> bash init_app.sh
+> chmod a-x run_daily.sh
+> 
+> bash run_daily.sh
 
 o ejecutar un intervalo de fechas definido
 
