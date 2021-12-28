@@ -31,3 +31,4 @@ def get_coins(
 
 if __name__ == "__main__":
     app()
+
